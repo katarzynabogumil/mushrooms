@@ -18,12 +18,6 @@ function take_quiz () {
 function display_question (n, score) {
     let container = document.querySelector('#take-quiz');
 
-    const next = document.createElement('button');
-    next.classList.add('btn', 'btn-light', 'middle');
-    next.addEventListener('click', function() {
-        display_question(n+1, score);
-    });
-
     if (n === Object.keys(QUESTIONS).length) {
         let winner = Object.entries(score).sort((a, b) => b[1] - a[1])[0][0];
         let outcome = OUTCOMES[winner];
@@ -31,7 +25,7 @@ function display_question (n, score) {
         container.innerHTML = `            
             <div class='card middle'>
                 <div class="card-body">
-                Congratulations! You finished the quiz.<br>
+                Congratulations! You finished the quiz.
                 You are the ${outcome.title}!
                 </div>
             </div>
@@ -52,7 +46,6 @@ function display_question (n, score) {
         container.append(desc);
 
     } else {
-        next.innerHTML = 'Next question';
         let question = Object.values(QUESTIONS)[n];
         container.innerHTML = `
             <div class='card middle'>
@@ -89,10 +82,9 @@ function display_question (n, score) {
         Array.prototype.forEach.call(buttons, el => {
             el.addEventListener('click', e => {
                 score = check_multiple(e.target, n, buttons, score);
-                container.append(next);
+                setTimeout(() => display_question(n+1, score), 1500);
             });
         });
-
     }
 }
 
@@ -119,7 +111,8 @@ function check_answer (clicked, n, buttons, score) {
             });
         }
     });
-    clicked.classList.add('middle');
+    clicked.classList.remove('light');
+    clicked.classList.add('dark');
     return score;
 }
 

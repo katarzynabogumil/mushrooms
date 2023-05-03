@@ -1,0 +1,79 @@
+@media screen and (max-width: 800px) {
+    .body {
+        width: 90%;
+    }
+    
+    .outcome-img {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .body {
+        max-width: 50%;
+        max-height: 70vh !important;
+    }
+
+    .outcome-img {
+        max-width: 100%;
+        max-height: 70vh !important;
+    }
+}
+
+.body {
+    font-family: 'Open Sans', Helvetica, sans-serif;
+    font-weight: 800;
+    padding: 15px;
+}
+
+h4, h5 {
+    font-weight: 800;
+}
+
+.card {
+    border-radius: 25px;
+    padding-top: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.outcome-img {
+    border-radius: 25px;
+}
+
+.title, .title:hover {
+    background-color: #bb5f56;
+    border: none;
+}
+
+.dark, .dark:hover {
+    background-color: #F4978E;
+    border: none;
+}
+
+.middle,.middle:hover {
+    background-color: #F8AD9D;
+    border: none;
+}
+
+.light, .light:hover {
+    background-color: #FBC4AB;
+    border: none;
+}
+
+.btn {
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.button {
+    background-color: rgba(255, 255, 255, 0.4);
+    border: none;
+    border-radius: 25px;
+}
+
+.button:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    border: none;
+}
